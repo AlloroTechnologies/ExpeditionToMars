@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5ay1nmkbc3cw"]
+[gd_scene load_steps=3 format=3 uid="uid://c5ay1nmkbc3cw"]
 
 [ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
+[ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://scenes/player.tscn" id="2_2cb1j"]
 
 [node name="World" type="Node2D"]
 
@@ -16,3 +17,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 1152, 648)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(13, 0, 1152, 1, 1151, 648, 1, 648, 0, -23, -117, 63, -97, 777, 1237, 770, 1259, -103, 53, -142, 3, -4)
+
+[node name="Player" parent="." instance=ExtResource("2_2cb1j")]
+position = Vector2(247, 114)
