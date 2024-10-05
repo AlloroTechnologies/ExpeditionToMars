@@ -19,4 +19,4 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 1152, 648)
 polygon = PackedVector2Array(13, 0, 1152, 1, 1151, 648, 1, 648, 0, -23, -117, 63, -97, 777, 1237, 770, 1259, -103, 53, -142, 3, -4)
 
 [node name="Player" parent="." instance=ExtResource("2_2cb1j")]
-position = Vector2(247, 114)
+position = Vector2(40, 40)
