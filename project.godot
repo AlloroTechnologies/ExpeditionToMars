@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="ExpeditionToMars"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=4.0
 
 [dotnet]
 

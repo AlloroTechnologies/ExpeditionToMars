@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://c5ay1nmkbc3cw"]
+[gd_scene load_steps=2 format=3 uid="uid://c5ay1nmkbc3cw"]
+
+[ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
 
 [node name="World" type="Node2D"]
+
+[node name="640x480RedPlanet-Dry" type="Sprite2D" parent="."]
+texture_filter = 3
+texture_repeat = 2
+position = Vector2(576, 324)
+texture = ExtResource("1_ygqry")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 1152, 648)
