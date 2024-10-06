@@ -44,25 +44,22 @@ func play_anim(movement):
 	if dir == "right":
 		anim.flip_h = true
 		if movement == 1:
-			anim.play("front_idle")
+			anim.play("walk")
 		elif movement == 0:
 			anim.play("no_walk")
 	if dir == "left":
 		anim.flip_h = false
 		if movement == 1:
-			anim.play("front_idle")
+			anim.play("walk")
 		elif movement == 0:
 			anim.play("no_walk")
 	if dir == "up":
 		if movement == 1:
-			anim.play("front_idle")
+			anim.play("walk")
 		elif movement == 0:
 			anim.play("no_walk")
 	if dir == "down":
 		if movement == 1:
-			anim.play("front_idle")
+			anim.play("walk")
 		elif movement == 0:
 			anim.play("no_walk")
-		
-		
-	
