@@ -19,34 +19,42 @@ func _physics_process(delta):
 	
 	
 func player_movement(delta):
+	steps.is_playing() == false
+	var stepping = false
 	if Input.is_action_pressed("Romper"):
 		$AnimatedSprite2D.play("break", 1.0, true)
 	elif Input.is_action_pressed("Arriba"):
+		stepping = true
 		play_anim(1)
 		current_dir = "up"
 		velocity.x = 0
 		velocity.y = -speed
 	elif Input.is_action_pressed("Abajo"):
+		stepping = true
 		play_anim(1)
 		current_dir = "down"
 		velocity.x = 0
 		velocity.y = speed
 	elif Input.is_action_pressed("Izquierda"):
+		stepping = true
 		play_anim(1)
-		steps.play()
 		current_dir = "left"
 		velocity.x = -speed
 		velocity.y = 0
 	elif Input.is_action_pressed("Derecha"):
+		stepping = true
 		play_anim(1)
-		steps.play()
 		current_dir = "right"
 		velocity.x = speed
 		velocity.y = 0
 	else:
 		play_anim(0)
+		stepping = false
 		velocity.x = 0
 		velocity.y = 0
+	if stepping == true:
+		if steps.is_playing() == false:
+			steps.play()
 	
 	move_and_slide()
 	
