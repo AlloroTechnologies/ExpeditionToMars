@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
 [ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://Scenes/player.tscn" id="2_2cb1j"]
-[ext_resource type="Script" path="res://scripts/UI.gd" id="3_14s2n"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="3_pay48"]
 [ext_resource type="Texture2D" uid="uid://frpws2gk270h" path="res://art/environment/rock 1.png" id="4_26hcq"]
 [ext_resource type="PackedScene" uid="uid://cmedpqeyj0pd4" path="res://scenes/rock1.tscn" id="5_0jjbe"]
 
@@ -31,14 +31,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 650.0
-script = ExtResource("3_14s2n")
+script = ExtResource("3_pay48")
 
 [node name="Minerals" type="Label" parent="HUD/UI"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = -1.0
-offset_right = 416.0
-offset_bottom = 49.0
+offset_left = 41.0
+offset_right = 417.0
+offset_bottom = 50.0
 theme_override_font_sizes/font_size = 31
 text = " 0"
 

@@ -68,6 +68,8 @@ func play_anim(movement):
 			anim.play("no_walk")
 func break_rock():
 	if  Input.is_action_pressed("Romper") and rock_in_ranged:
+		global.score += 1
+		global.minerals.text = str(global.score)
 		global.player_breaking = true
 	else:
 		global.player_breaking = false
