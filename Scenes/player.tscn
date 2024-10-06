@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4f45gsupmf2g"]
+[gd_scene load_steps=17 format=3 uid="uid://4f45gsupmf2g"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tu5h6"]
 [ext_resource type="Texture2D" uid="uid://br3ks245nftxn" path="res://art/character/player.png" id="2_m6eos"]
@@ -6,8 +6,24 @@
 [ext_resource type="AudioStream" uid="uid://dgm0xm5mqbuhl" path="res://SFX/rock-destroy-6409.mp3" id="4_tetkb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4u2m"]
-radius = 13.0
-height = 44.0
+radius = 11.0
+height = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drcjm"]
+atlas = ExtResource("2_m6eos")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycdw"]
+atlas = ExtResource("2_m6eos")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7ng8"]
+atlas = ExtResource("2_m6eos")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5na64"]
+atlas = ExtResource("2_m6eos")
+region = Rect2(0, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8mpah"]
 atlas = ExtResource("2_m6eos")
@@ -31,6 +47,23 @@ region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vq86a"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drcjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7ng8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5na64")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8mpah")
@@ -58,19 +91,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhmjx"]
-radius = 28.4429
+radius = 24.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tu5h6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(4, 5)
 shape = SubResource("CapsuleShape2D_i4u2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_vq86a")
-animation = &"walk"
+animation = &"break"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -84,6 +117,7 @@ drag_vertical_enabled = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 5)
 shape = SubResource("CircleShape2D_dhmjx")
 
 [node name="steps" type="AudioStreamPlayer2D" parent="."]

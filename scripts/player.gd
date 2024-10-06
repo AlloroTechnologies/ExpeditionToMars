@@ -19,13 +19,9 @@ func _physics_process(delta):
 	
 	
 func player_movement(delta):
-	if Input.is_action_pressed("Izquierda"):
-		steps.play()
-	if Input.is_action_pressed("Derecha"):
-		steps.play()
-	
-	
-	if Input.is_action_pressed("Arriba"):
+	if Input.is_action_pressed("Romper"):
+		$AnimatedSprite2D.play("break", 1.0, true)
+	elif Input.is_action_pressed("Arriba"):
 		play_anim(1)
 		current_dir = "up"
 		velocity.x = 0
@@ -37,11 +33,13 @@ func player_movement(delta):
 		velocity.y = speed
 	elif Input.is_action_pressed("Izquierda"):
 		play_anim(1)
+		steps.play()
 		current_dir = "left"
 		velocity.x = -speed
 		velocity.y = 0
 	elif Input.is_action_pressed("Derecha"):
 		play_anim(1)
+		steps.play()
 		current_dir = "right"
 		velocity.x = speed
 		velocity.y = 0
@@ -49,12 +47,14 @@ func player_movement(delta):
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
+	
 	move_and_slide()
 	
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
-	
+	if dir == "no":
+		anim.play("no_walk")
 	if dir == "right":
 		anim.flip_h = true
 		if movement == 1:
@@ -77,6 +77,7 @@ func play_anim(movement):
 			anim.play("walk")
 		elif movement == 0:
 			anim.play("no_walk")
+			
 func break_rock():
 	if  Input.is_action_pressed("Romper") and rock_in_ranged:
 		breakage.play()

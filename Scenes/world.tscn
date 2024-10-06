@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5ay1nmkbc3cw"]
 
 [ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
-[ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://Scenes/player.tscn" id="2_2cb1j"]
+[ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://scenes/player.tscn" id="2_2cb1j"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="3_pay48"]
 [ext_resource type="Texture2D" uid="uid://frpws2gk270h" path="res://art/environment/rock 1.png" id="4_26hcq"]
-[ext_resource type="PackedScene" uid="uid://cmedpqeyj0pd4" path="res://scenes/rock1.tscn" id="5_0jjbe"]
+[ext_resource type="PackedScene" uid="uid://b2pjq7n5cv6uv" path="res://scenes/rock1.tscn" id="5_0jjbe"]
 
 [node name="World" type="Node2D"]
 
