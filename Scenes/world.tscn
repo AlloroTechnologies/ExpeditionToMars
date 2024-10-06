@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5ay1nmkbc3cw"]
+[gd_scene load_steps=5 format=3 uid="uid://c5ay1nmkbc3cw"]
 
 [ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
 [ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://scenes/player.tscn" id="2_2cb1j"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="3_14s2n"]
+[ext_resource type="Texture2D" uid="uid://dhbwe470rti53" path="res://icon.svg" id="4_mf3xj"]
 
 [node name="World" type="Node2D"]
 
@@ -20,3 +22,24 @@ polygon = PackedVector2Array(13, 0, 1152, 1, 1151, 648, 1, 648, 0, -23, -117, 63
 
 [node name="Player" parent="." instance=ExtResource("2_2cb1j")]
 position = Vector2(40, 40)
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="Score"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 650.0
+script = ExtResource("3_14s2n")
+
+[node name="Points" type="Label" parent="Score/UI"]
+layout_mode = 0
+offset_right = 376.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 31
+text = " Score: 0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Score/UI"]
+position = Vector2(162, 27)
+scale = Vector2(0.332031, 0.332031)
+texture = ExtResource("4_mf3xj")
