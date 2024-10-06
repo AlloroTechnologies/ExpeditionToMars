@@ -1,50 +1,57 @@
 [gd_scene load_steps=10 format=3 uid="uid://4f45gsupmf2g"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tu5h6"]
-[ext_resource type="Texture2D" uid="uid://ctd615dgy552j" path="res://art/character/player.png" id="2_m6eos"]
+[ext_resource type="Texture2D" uid="uid://br3ks245nftxn" path="res://art/character/player.png" id="2_m6eos"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4u2m"]
 radius = 13.0
 height = 44.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvv48"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mpah"]
 atlas = ExtResource("2_m6eos")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l3kkt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kt3e"]
 atlas = ExtResource("2_m6eos")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqimd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm66y"]
 atlas = ExtResource("2_m6eos")
 region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3oas"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gblug"]
 atlas = ExtResource("2_m6eos")
-region = Rect2(48, 0, 48, 48)
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ebrx"]
+atlas = ExtResource("2_m6eos")
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vq86a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qvv48")
+"texture": SubResource("AtlasTexture_8mpah")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l3kkt")
+"texture": SubResource("AtlasTexture_3kt3e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rqimd")
+"texture": SubResource("AtlasTexture_sm66y")
 }],
 "loop": true,
-"name": &"front_idle",
+"name": &"no_walk",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w3oas")
+"texture": SubResource("AtlasTexture_gblug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ebrx")
 }],
 "loop": true,
-"name": &"no_walk",
+"name": &"walk",
 "speed": 5.0
 }]
 
