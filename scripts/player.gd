@@ -4,6 +4,9 @@ var rock_in_ranged = false
 
 const speed = 100
 var current_dir = "no"
+@onready var steps = $steps
+@onready var breakage = $breakage
+
 
 func _ready():
 	$AnimatedSprite2D.play("no_walk")
@@ -13,7 +16,15 @@ func _physics_process(delta):
 	player_movement(delta)
 	break_rock()
 	
+	
+	
 func player_movement(delta):
+	if Input.is_action_pressed("Izquierda"):
+		steps.play()
+	if Input.is_action_pressed("Derecha"):
+		steps.play()
+	
+	
 	if Input.is_action_pressed("Arriba"):
 		play_anim(1)
 		current_dir = "up"
@@ -68,6 +79,7 @@ func play_anim(movement):
 			anim.play("no_walk")
 func break_rock():
 	if  Input.is_action_pressed("Romper") and rock_in_ranged:
+		breakage.play()
 		global.score += 1
 		global.minerals.text = str(global.score)
 		global.player_breaking = true

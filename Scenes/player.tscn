@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://4f45gsupmf2g"]
+[gd_scene load_steps=13 format=3 uid="uid://4f45gsupmf2g"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tu5h6"]
 [ext_resource type="Texture2D" uid="uid://br3ks245nftxn" path="res://art/character/player.png" id="2_m6eos"]
+[ext_resource type="AudioStream" uid="uid://7tq00jwfk4s7" path="res://SFX/snow-step-1-81064.mp3" id="3_evh6n"]
+[ext_resource type="AudioStream" uid="uid://dgm0xm5mqbuhl" path="res://SFX/rock-destroy-6409.mp3" id="4_tetkb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4u2m"]
 radius = 13.0
@@ -83,6 +85,14 @@ drag_vertical_enabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_dhmjx")
+
+[node name="steps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_evh6n")
+volume_db = -6.933
+
+[node name="breakage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tetkb")
+volume_db = -24.762
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
