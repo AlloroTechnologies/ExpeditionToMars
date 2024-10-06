@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5ay1nmkbc3cw"]
+[gd_scene load_steps=6 format=3 uid="uid://c5ay1nmkbc3cw"]
 
 [ext_resource type="Texture2D" uid="uid://bkwvhbftwtvl8" path="res://art/background/Red Planet 640x480/640x480 Red Planet - Dry.png" id="1_ygqry"]
 [ext_resource type="PackedScene" uid="uid://4f45gsupmf2g" path="res://scenes/player.tscn" id="2_2cb1j"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="3_14s2n"]
-[ext_resource type="Texture2D" uid="uid://dhbwe470rti53" path="res://icon.svg" id="4_mf3xj"]
+[ext_resource type="Texture2D" uid="uid://frpws2gk270h" path="res://art/environment/rock 1.png" id="4_26hcq"]
+[ext_resource type="PackedScene" uid="uid://b2pjq7n5cv6uv" path="res://scenes/rock1.tscn" id="5_0jjbe"]
 
 [node name="World" type="Node2D"]
 
@@ -21,25 +22,40 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 1152, 648)
 polygon = PackedVector2Array(13, 0, 1152, 1, 1151, 648, 1, 648, 0, -23, -117, 63, -97, 777, 1237, 770, 1259, -103, 53, -142, 3, -4)
 
 [node name="Player" parent="." instance=ExtResource("2_2cb1j")]
-position = Vector2(40, 40)
+position = Vector2(96, 94)
 
-[node name="Score" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="UI" type="Control" parent="Score"]
+[node name="UI" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 650.0
 script = ExtResource("3_14s2n")
 
-[node name="Points" type="Label" parent="Score/UI"]
+[node name="Minerals" type="Label" parent="HUD/UI"]
 layout_mode = 0
-offset_right = 376.0
-offset_bottom = 121.0
+offset_left = 40.0
+offset_top = -1.0
+offset_right = 416.0
+offset_bottom = 49.0
 theme_override_font_sizes/font_size = 31
-text = " Score: 0"
+text = " 0"
 
-[node name="Sprite2D" type="Sprite2D" parent="Score/UI"]
-position = Vector2(162, 27)
-scale = Vector2(0.332031, 0.332031)
-texture = ExtResource("4_mf3xj")
+[node name="Sprite2D" type="Sprite2D" parent="HUD/UI"]
+position = Vector2(24, 20)
+texture = ExtResource("4_26hcq")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 32, 32)
+
+[node name="Rock11" parent="." instance=ExtResource("5_0jjbe")]
+position = Vector2(188, 132)
+
+[node name="Rock12" parent="." instance=ExtResource("5_0jjbe")]
+position = Vector2(284, 75)
+
+[node name="Rock13" parent="." instance=ExtResource("5_0jjbe")]
+position = Vector2(370, 153)
+
+[node name="Rock14" parent="." instance=ExtResource("5_0jjbe")]
+position = Vector2(389, 87)

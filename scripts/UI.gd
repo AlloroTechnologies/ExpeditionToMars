@@ -2,7 +2,7 @@ extends Control
 
 var score = 0
 
-@onready var points = $Points
+@onready var minerals = $Minerals
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
