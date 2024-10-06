@@ -19,7 +19,6 @@ func _physics_process(delta):
 	
 	
 func player_movement(delta):
-	steps.is_playing() == false
 	var stepping = false
 	if Input.is_action_pressed("Romper"):
 		$AnimatedSprite2D.play("break", 1.0, true)
@@ -52,8 +51,8 @@ func player_movement(delta):
 		stepping = false
 		velocity.x = 0
 		velocity.y = 0
-	if stepping == true:
-		if steps.is_playing() == false:
+	if stepping:
+		if not steps.is_playing():
 			steps.play()
 	
 	move_and_slide()
