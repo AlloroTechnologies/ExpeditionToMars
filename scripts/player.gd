@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var rock_in_ranged = false
+
 const speed = 100
 var current_dir = "no"
 
@@ -9,6 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+	break_rock()
 	
 func player_movement(delta):
 	if Input.is_action_pressed("Arriba"):
@@ -63,6 +66,23 @@ func play_anim(movement):
 			anim.play("front_idle")
 		elif movement == 0:
 			anim.play("no_walk")
+func break_rock():
+	if  Input.is_action_pressed("Romper") and rock_in_ranged:
+		global.player_breaking = true
+	else:
+		global.player_breaking = false
 		
 		
-	
+func player():
+	pass
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("rock"):
+		rock_in_ranged = true
+		global.rockid = body.get_name()
+
+
+func _on_area_2d_body_exited(body):
+	if body.has_method("rock"):
+		rock_in_ranged = false
+		global.rockid = "-1"
